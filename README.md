@@ -21,6 +21,12 @@ The canonical link should point to itself `<link rel="canonical" href="self.html
 
 > demonstrate usage of amp-bind and event handling
 
+Using the imdb ID attribute to get the poster image
+```
+http://img.omdbapi.com/?apikey=c2f9b89f&i=tt0078748
+```
+
+
 
 
 
