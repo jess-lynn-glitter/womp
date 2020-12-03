@@ -33,22 +33,30 @@
             position: relative;
             top: 44vh;
             background-color: white;
-            display: block!important;
+            display: block;
         }
 
         .poster {
             margin-bottom: 2em;
         }
+        /* .poster-container {
+            max-width: 50vw;
+        } */
     </style>
 </head>
 
 <body>
-    <amp-img class="poster" src="http://www.omdbapi.com/src/poster.jpg" alt="Welcome" height="400" width="400"></amp-img>
+    <div class="poster-container">
+        <amp-img class="poster"
+            src="http://www.omdbapi.com/src/poster.jpg"
+            alt="Welcome" height="40" width="27"
+            layout="responsive"
+        ></amp-img>
+    </div>
 
     <amp-list
-        width="auto"
-        height="50vh"
-        layout="fixed-height"
+        height="5em"
+        width="10em"
         [src]="'https://www.omdbapi.com/?apikey=c2f9b89f&s=' + title"
         items="Search"
     >
@@ -67,6 +75,9 @@
     </amp-list>
 
 
+        <!-- layout="responsive" -->
+        <!-- layout="fixed-height" -->
+        <!-- <amp-img class="poster" src="http://www.omdbapi.com/src/poster.jpg" -->
         <!-- src="amp-script:dataFunctions.getRemoteData" -->
         <!-- src="https://www.omdbapi.com/?apikey=c2f9b89f&s={{title}}" -->
         <!-- src="/test.json" -->
