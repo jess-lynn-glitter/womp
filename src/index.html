@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ⚡>
 <head>
     <meta charset="UTF-8">
     <link rel="canonical" href="self.html">
@@ -7,8 +7,32 @@
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>womp</title>
+    <style amp-custom>
+        body {
+            padding: 4em 1em;
+            text-align: center;
+        }
+        .search {
+            margin: 1em auto;
+            display: flex;
+            justify-content: center;
+            width: 80vw;
+        }
+        .search label {
+            margin-right: 1em;
+        }
+        .search input {
+            width: 100%;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <amp-img src="http://www.omdbapi.com/src/poster.jpg" alt="Welcome" height="400" width="400"></amp-img>
+    <div class="search">
+        <label for="search">title</label>
+        <input type="text" id="search" name="search">
+    </div>
 </body>
+
 </html>

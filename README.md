@@ -12,3 +12,7 @@ The [AMP Documentation](https://amp.dev/) is a great resource.  In addition to a
 * Include an amp-list, amp-img, and demonstrate usage of amp-bind and event handling
 * At minimum, display the movie title and cover image
 * Apply some basic CSS to the page
+
+The canonical link should point to itself `<link rel="canonical" href="self.html">`
+
+
