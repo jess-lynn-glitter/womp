@@ -28,19 +28,37 @@
         .search input {
             width: 100%;
         }
+
+        .list-overflow {
+            position: relative;
+            top: 44vh;
+            background-color: white;
+            display: block!important;
+        }
+
+        .poster {
+            margin-bottom: 2em;
+        }
     </style>
 </head>
 
 <body>
-    <amp-img src="http://www.omdbapi.com/src/poster.jpg" alt="Welcome" height="400" width="400"></amp-img>
+    <amp-img class="poster" src="http://www.omdbapi.com/src/poster.jpg" alt="Welcome" height="400" width="400"></amp-img>
 
     <amp-list
         width="auto"
-        height="100"
+        height="50vh"
         layout="fixed-height"
         [src]="'https://www.omdbapi.com/?apikey=c2f9b89f&s=' + title"
         items="Search"
     >
+        <div overflow
+            role="button"
+            aria-label="Show more"
+            class="list-overflow">
+            Show more
+        </div>
+
         <template type="amp-mustache">
             <div class="url-entry">
                 <a href="https://www.imdb.com/title/{{imdbID}}/">{{Title}}</a>
@@ -54,10 +72,11 @@
         <!-- src="/test.json" -->
 
 
-    <p [text]="'Hello ' + title">Hello World</p>
+    <p [text]="'Search for ' + title">search...</p>
 
     <div class="search">
         <label for="search">search by title</label>
+        <!-- bind -->
         <input type="text" id="search" name="search"
             on="change:AMP.setState({title: event.value})">
     </div>
