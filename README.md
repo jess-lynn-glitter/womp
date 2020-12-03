@@ -16,3 +16,11 @@ The [AMP Documentation](https://amp.dev/) is a great resource.  In addition to a
 The canonical link should point to itself `<link rel="canonical" href="self.html">`
 
 
+-------------------------------------------------------------
+
+
+> demonstrate usage of amp-bind and event handling
+
+
+
+

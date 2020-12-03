@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+    <!-- <script async custom-element="amp-script" src="https://cdn.ampproject.org/v0/amp-script-0.1.js"></script> -->
     <title>womp</title>
     <style amp-custom>
         body {
@@ -29,10 +33,52 @@
 
 <body>
     <amp-img src="http://www.omdbapi.com/src/poster.jpg" alt="Welcome" height="400" width="400"></amp-img>
+
+    <amp-list
+        width="auto"
+        height="100"
+        layout="fixed-height"
+        [src]="'https://www.omdbapi.com/?apikey=c2f9b89f&s=' + title"
+        items="Search"
+    >
+        <template type="amp-mustache">
+            <div class="url-entry">
+                <a href="{{Poster}}">{{Title}}</a>
+            </div>
+        </template>
+    </amp-list>
+
+
+        <!-- src="amp-script:dataFunctions.getRemoteData" -->
+        <!-- src="https://www.omdbapi.com/?apikey=c2f9b89f&s={{title}}" -->
+        <!-- src="/test.json" -->
+
+
+    <p [text]="'Hello ' + title">Hello World</p>
+
     <div class="search">
-        <label for="search">title</label>
-        <input type="text" id="search" name="search">
+        <label for="search">search by title</label>
+        <input type="text" id="search" name="search"
+            on="change:AMP.setState({title: event.value})">
     </div>
+
+    <!-- <script>
+        var API_KEY = 'c2f9b89f'
+        var DATA_URL = `http://www.omdbapi.com/?apikey=${API_KEY}&s=`
+        var POSTER_URL = `http://img.omdbapi.com/?apikey=${API_KEY}&s=`
+    </script> -->
+
+    <!-- <amp-script id="dataFunctions" script="local-script" nodom></amp-script> -->
+    <!-- <script id="local-script" target="amp-script" type="text/plain">
+        function getRemoteData () {
+            console.log('args', arguments)
+            if (!title) return null
+            return fetch('https://www.omdbapi.com/?apikey=c2f9b89f&s=' + title)
+                .then(resp => resp.json())
+                .then(res => ({ items: res.Search }))
+        }
+        exportFunction('getRemoteData', getRemoteData);
+    </script> -->
 </body>
 
 </html>
