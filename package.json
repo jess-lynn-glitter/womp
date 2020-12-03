@@ -1,5 +1,26 @@
 {
+  "name": "womp",
+  "description": "Create a movie search engine using the [OMBd API](http://www.omdbapi.com/) and AMP components.",
+  "version": "0.0.0",
+  "main": "index.js",
   "devDependencies": {
     "ecstatic": "^4.1.4"
-  }
+  },
+  "dependencies": {},
+  "scripts": {
+      "start": "ecstatic src",
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/womp.git"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/womp/issues"
+  },
+  "homepage": "https://github.com/nichoth/womp#readme",
+  "private": "true"
 }
+
