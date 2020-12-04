@@ -1,4 +1,16 @@
 # womp
+
+todo
+* the main image should update
+
+## start a local server
+```
+npm start
+```
+
+Visit `http://localhost:8000/#development=1`
+
+## notes
 Create a movie search engine using the [OMBd API](http://www.omdbapi.com/) and AMP components.
 
 http://www.omdbapi.com/
